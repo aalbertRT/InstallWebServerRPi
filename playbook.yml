@@ -1,0 +1,11 @@
+---
+- name: Set up server
+  hosts: webserver
+  become: true
+  become_method: sudo
+  vars_files: 
+    - vars.yml
+  roles:
+    - install
+
+#- name: Install applications

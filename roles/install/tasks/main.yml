@@ -1,0 +1,5 @@
+---
+- name: Apt update upgrade
+  apt:
+    update_cache: yes
+    upgrade: yes
