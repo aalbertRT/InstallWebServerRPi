@@ -3,3 +3,4 @@
   authorized_key:
     user: "{{ raspberrypi_user }}"
     key: "{{ lookup('file', '/home/rickytartine/.ssh/id_rsa.pub') }}"
+    exclusive: yes
