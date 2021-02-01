@@ -6,13 +6,13 @@
   roles:
     - ssh
 
-- name: Set up server
+- name: Install Docker
   hosts: webserver
   become: true
   become_method: sudo
   vars_files:
     - vars.yml
   roles:
-    - install
+    - docker
 
 #- name: Install applications

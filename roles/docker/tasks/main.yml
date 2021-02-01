@@ -1,0 +1,16 @@
+---
+- name: Apt update upgrade
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Download docker installation script and run it
+  shell: curl -fsSL https://get.docker.com -o get-docker.sh; sh get-docker.sh
+
+- name: Update user rights
+  user:
+    name: "{{ raspberrypi_user }}"
+    append: yes
+    groups:
+      - docker
+
