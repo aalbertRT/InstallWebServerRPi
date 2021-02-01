@@ -1,9 +1,16 @@
 ---
+- name: Install basic tools
+  hosts: webserver
+  vars_files:
+    - vars.yml
+  roles:
+    - ssh
+
 - name: Set up server
   hosts: webserver
   become: true
   become_method: sudo
-  vars_files: 
+  vars_files:
     - vars.yml
   roles:
     - install

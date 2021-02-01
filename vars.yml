@@ -1,1 +1,4 @@
 ---
+# Generic
+raspberrypi_user: pi
+debian_version: buster
