@@ -2,3 +2,8 @@
 # Generic
 raspberrypi_user: pi
 debian_version: buster
+
+# BDD
+bdd_user: pi
+bdd_password: pi
+

@@ -4,7 +4,8 @@
   vars_files:
     - vars.yml
   roles:
-    - ssh
+    - role: ssh
+      tags: ssh_tag
 
 - name: Install Docker
   hosts: webserver
@@ -13,6 +14,18 @@
   vars_files:
     - vars.yml
   roles:
-    - docker
+    - role: docker
+      tags: docker_tag
+
+- name: Install BDD
+  hosts: webserver
+  become: true
+  become_method: sudo
+  vars_files:
+    - vars.yml
+  roles:
+    - role: bdd
+      tags: bdd_tag
+
 
 #- name: Install applications
