@@ -3,9 +3,17 @@
   hosts: webserver
   vars_files:
     - vars.yml
+  tags: ssh_tag
   roles:
     - role: ssh
-      tags: ssh_tag
+
+- name: Install Jenkins
+  hosts: webserver
+  become: true
+  become_method: sudo
+  tags: jenkins_tag
+  roles:
+    - role: jenkins
 
 - name: Install Docker
   hosts: webserver
@@ -13,9 +21,9 @@
   become_method: sudo
   vars_files:
     - vars.yml
+  tags: docker_tag
   roles:
     - role: docker
-      tags: docker_tag
 
 - name: Install BDD
   hosts: webserver
@@ -23,9 +31,8 @@
   become_method: sudo
   vars_files:
     - vars.yml
+  tags: bdd_tag
   roles:
     - role: bdd
-      tags: bdd_tag
-
 
 #- name: Install applications

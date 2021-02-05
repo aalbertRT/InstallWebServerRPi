@@ -1,0 +1,15 @@
+---
+- name: Install requirements (Java)
+  apt:
+    name: openjdk-11-jdk
+
+#- name: Add GPG Jenkins key
+#  shell: wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
+
+#- name: Add Jenkins repo to APT sources
+#  apt_repository:
+#    repo: deb https://pkg.jenkins.io/debian-stable binary
+
+#- name: Install Jenkins
+#  apt:
+#    name: jenkins

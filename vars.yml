@@ -4,6 +4,7 @@ raspberrypi_user: pi
 debian_version: buster
 
 # BDD
+postgresql_version: 11
 bdd_user: pi
 bdd_password: pi
-
+bdd_name: dev
